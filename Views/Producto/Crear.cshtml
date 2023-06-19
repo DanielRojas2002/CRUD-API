@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Crear</h1>
+
+@model Producto
+
+<div class="row">
+    <div class="col-6">
+        <form asp-action="Crear">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <h2 class="mb-3">Iniciar Sesión</h2>
+
+          
+
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label"></label>
+                <input asp-for="Nombre" class="form-control" placeholder="Correo" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label asp-for="Categoria" class="form-label"></label>
+                <input asp-for="Categoria" class="form-control" placeholder="Correo" />
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Precio" class="form-label"></label>
+                <input asp-for="Precio" class="form-control" placeholder="Correo" type="number" />
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CodigoBarra" class="form-label"></label>
+                <input asp-for="CodigoBarra" class="form-control" placeholder="Correo" />
+                <span asp-validation-for="CodigoBarra" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Marca" class="form-label"></label>
+                <input asp-for="Marca" class="form-control" placeholder="Correo" />
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+
+
+
+
+
+
+
+            <button type="submit" class="btn btn-success w-100">Crear</button>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+
+
+
+
+    }
+
+
+}

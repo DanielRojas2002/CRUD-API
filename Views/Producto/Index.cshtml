@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+@model List<Producto>
+
+<h1>Lista de Productos</h1>
+
+<a asp-action="Crear" class="btn btn-success">Crear</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Código de Barras</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model)
+        {
+            <tr>
+                <td>@producto.IdProducto</td>
+                <td>@producto.CodigoBarra</td>
+                <td>@producto.Nombre</td>
+                <td>@producto.Marca</td>
+                <td>@producto.Categoria</td>
+                <td>@producto.Precio</td>
+                <td>
+                    <a class="btn btn-success" asp-route-IdProducto="@producto.IdProducto" asp-action="Editar">Editar</a>
+                    <a class="btn btn-danger" asp-route-IdProducto="@producto.IdProducto" asp-action="Eliminar">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
